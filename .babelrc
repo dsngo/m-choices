@@ -12,11 +12,11 @@
       ]
     }
   },
-  "minified":	true,
+  "minified": true,
   "comments": false,
   "presets": [
+    "react",
     [
-      "react",
       "env",
       {
         "targets": {
@@ -28,6 +28,7 @@
     ]
   ],
   "plugins": [
+    ["dynamic-import-webpack"],
     ["transform-react-jsx"],
     ["react-hot-loader/babel"]
   ]

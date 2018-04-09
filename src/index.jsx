@@ -1,7 +1,7 @@
 import React from "react";
 import { AppContainer } from "react-hot-loader";
 import { render } from "react-dom";
-import { App } from "./components/App";
+import App from "./components/App";
 
 const renderApp = () => render(<App />, document.getElementById("app"));
 const renderHot = Component =>

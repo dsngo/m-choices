@@ -11,7 +11,7 @@ const pageTitle = "Multiple Choices - Site";
 const PATH = {
   app: join(__dirname, "app"),
   src: join(__dirname, "src"),
-  css: join(__dirname, "src/css"),
+  styles: join(__dirname, "src/styles"),
   root: join(__dirname, ""),
   template: join(__dirname, "src/template.ejs"),
   nodeModules: join(__dirname, "node_modules"),
@@ -32,7 +32,7 @@ module.exports = (env = {}) => {
   const bundleConfig = {
     context: PATH.root,
     entry: {
-      main: ["./src/index", "./src/css/index"],
+      main: ["./src/index", "./src/styles/index"],
     },
     mode: "development",
     stats,
@@ -67,7 +67,7 @@ module.exports = (env = {}) => {
         },
         {
           test: /\.s?css$/,
-          include: PATH.css,
+          include: PATH.styles,
           use: [
             env.production ? MiniCssExtractPlugin.loader : "style-loader",
             {
@@ -133,8 +133,8 @@ module.exports = (env = {}) => {
       new MiniCssExtractPlugin({
         // Options similar to the same options in webpackOptions.output
         // both options are optional
-        filename: "assets/css/[name].css",
-        chunkFilename: "assets/css/[name].[id].css",
+        filename: "assets/styles/[name].css",
+        chunkFilename: "assets/styles/[name].[id].css",
       }),
       new HtmlWebpackPlugin({
         title: `${pageTitle}`,
